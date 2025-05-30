@@ -36,7 +36,9 @@ module "sidecars" {
   source = "./modules/sidecar"
 
   service_name = var.services[count.index]
-  depends_on   = [module.services[var.services[count.index]]]
+
+  #bonus - make this depends on working properly
+  #depends_on   = [module.services[var.services[count.index]]]
 }
 
 resource "null_resource" "cleanup" {
