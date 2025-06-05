@@ -48,9 +48,9 @@ resource "null_resource" "cleanup" {
     services = join(",", local.cleanup_targets)
   }
 
-  depends_on = [module.services[svc].id]
+  depends_on = [module.serv]
 }
 
 output "service_ids" {
-  value = [for s in values(module.services) : s.id]
+  value = [for s in values(module.services) : s.name]
 }

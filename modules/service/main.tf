@@ -17,3 +17,6 @@ resource "null_resource" "service" {
   }
 }
 
+output "output" {
+  value = null_resource.service.triggers.name
+}
