@@ -2,6 +2,11 @@ Step-by-Step Instructions: Guide users through the process:
 
 Clone the repository.
 
+go to directory with task
+
+task1 = easy terraform 
+task3 = for seniors
+
 Run terraform init.
 
 Run terraform plan and observe the error.
