@@ -37,8 +37,8 @@ module "sidecars" {
 
   service_name = var.services[count.index]
 
-  #bonus - make this depends on working properly
-  #depends_on   = [module.services[var.services[count.index]]]
+  depends_on   = [module.sidecars]
+
 }
 
 resource "null_resource" "cleanup" {
@@ -48,9 +48,7 @@ resource "null_resource" "cleanup" {
     services = join(",", local.cleanup_targets)
   }
 
-  depends_on = [
-    for svc in local.cleanup_targets : module.services[svc].id
-  ]
+  depends_on = [module.services[svc].id]
 }
 
 output "service_ids" {

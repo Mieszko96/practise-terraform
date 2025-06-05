@@ -1,1 +1,11 @@
-please run terraform plan/apply and fix all issue in this broken terraform configuration.
+Step-by-Step Instructions: Guide users through the process:
+
+Clone the repository.
+
+Run terraform init.
+
+Run terraform plan and observe the error.
+
+Identify and fix the error.
+
+Please talk to us what you doing/what you thinking during debuging.
