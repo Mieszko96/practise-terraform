@@ -11,3 +11,17 @@ output "deployment_status" {
 output "instance_ips" {
   value = module.app.ips
 }
+
+resource "null_resource" "writer" {
+  provisioner "local-exec" {
+    command = "echo written_value > output.txt"
+  }
+
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+}
+
+data "local_file" "reader" {
+  filename = "output.txt"
+}
